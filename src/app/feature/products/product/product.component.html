@@ -1,0 +1,13 @@
+<div class="col-lg-4 col-md-6 mb-4 mt-4 mx-auto">
+  <div class="card text-center">
+    <a href="../../../../assets/images/card1.png" class="item-image">
+      <img src="{{product.image}}" class="card-img-top" alt="1">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title fw-bold">{{product.title}}</h5>
+      <h5 class="card-title fw-bold">{{product.price}} руб.</h5>
+      <p class="card-text">{{product.description}}</p>
+      <a href="#" class="btn btn-primary hvr-grow" routerLink="/order" [queryParams]="{product: product.title}">Купить</a>
+    </div>
+  </div>
+</div>

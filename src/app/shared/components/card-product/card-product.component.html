@@ -1,0 +1,10 @@
+<div class="card mb-3 col">
+  <a href="../../../../assets/images/card1.png" class="item-image">
+    <img src="{{product.image}}" class="card-img-top" alt="1">
+  </a>
+  <div class="card-body">
+    <h5 class="card-title fw-bold">{{product.title}}</h5>
+    <p class="card-text">{{product.description | hideDescription: 135}}</p>
+    <a href="#" [routerLink]="['/products', product.id]" class="btn btn-primary hvr-grow">Подробнее</a>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="slider my-5 py-4 wow animate__fadeIn">
+    <div class="slick-slider position-relative">
+      <a class="slider-image" href="#">
+        <img src="../../../assets/images/screen1.png" alt="1">
+      </a>
+      <div class="slider-text position-absolute top-50 start-50">
+        <h1 class="fw-bold">Скидки на травянные чаи</h1>
+        <p class="mt-5">Узай все подробности, заполнив заявку</p>
+        <button class="btn btn-primary mt-5 hvr-glow">Заполнить</button>
+      </div>
+    </div>
+  </div>
+
+
+  <ngb-accordion #acc="ngbAccordion"
+                 activeIds="ngb-panel-0" >
+    <ngb-panel title="Собираете ли вы подарочные боксы?">
+      <ng-template ngbPanelContent  class="border-0 pb-0">
+        Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel>
+      <ng-template ngbPanelTitle>
+        <span>Сколько у вас разновидностей чая?</span>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="В какой срок осуществляется доставка?">
+      <ng-template ngbPanelContent>
+        Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="У вас обновляется ассортимент?">
+      <ng-template ngbPanelContent>
+        Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="Какого объема у вас пачки чая?">
+      <ng-template ngbPanelContent>
+        Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+
+  <div *ngIf="showPopUp" class="pop-up-bg">
+    <div class="pop-up pt-5 fw-bold">
+      <div>Посмотрите наши чайные коллекции!</div>
+      <button routerLink="/catalog" class="btn btn-primary mt-5 hvr-glow pop-up-button">Смотреть</button>
+    </div>
+  </div>
+</div>
