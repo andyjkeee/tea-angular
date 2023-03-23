@@ -4,6 +4,7 @@ import {ActivatedRoute, Params} from "@angular/router";
 import {FormBuilder, Validators} from "@angular/forms";
 import {CustomValidators} from "../../shared/validators/custom-validators";
 import {CatalogService} from "../../shared/services/catalog.service";
+import {OrderType} from "../../../types/order.type";
 
 @Component({
   selector: 'order',
@@ -21,7 +22,6 @@ export class OrderComponent implements OnInit {
               private fb: FormBuilder,
               private catalogService: CatalogService,
               ) {
-
   }
 
   public checkoutForm = this.fb.group({
@@ -51,19 +51,21 @@ export class OrderComponent implements OnInit {
     })
   }
 
-  formValues = {
-    name: '',
-    last_name: '',
-    phone: '',
-    country: '',
-    zip: '',
-    product: '',
-    address: '',
-    comment: ''
-  }
+
 
   createOrder() {
-    this.catalogService.createOrder(this.formValues)
+    const completedForm = {
+      name: this.checkoutForm.get('name')?.value!,
+      last_name: this.checkoutForm.get('last_name')?.value!,
+      phone: this.checkoutForm.get('phone')?.value!,
+      country: this.checkoutForm.get('country')?.value!,
+      zip: this.checkoutForm.get('zip')?.value!,
+      product: this.checkoutForm.get('product')?.value!,
+      address: this.checkoutForm.get('address')?.value!,
+      comment: this.checkoutForm.get('comment')?.value!
+    };
+
+    this.catalogService.createOrder(completedForm)
       .subscribe(response => {
         if (response.success === 1 && !response.message) {
           this.hideFormHideText = false;

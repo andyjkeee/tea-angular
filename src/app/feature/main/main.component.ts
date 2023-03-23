@@ -24,4 +24,8 @@ export class MainComponent implements OnInit {
     })
   }
 
+  closePopUp() {
+    this.showPopUp = false;
+  }
+
 }
